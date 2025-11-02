@@ -21,33 +21,33 @@
       background-color: #A51C30;
       color: white;
       text-align: center;
-      padding: 2rem 1rem 1.5rem 1rem;
+      padding: 2rem 1rem;
       position: relative;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     header h1 {
       font-family: 'Merriweather', serif;
-      font-size: 1.6rem;
-      margin: 0;
+      font-size: 1.7rem;
+      margin: 0 0 1rem 0;
+      line-height: 1.3;
     }
 
     #downloadBtn {
-      position: absolute;
-      right: 20px;
-      top: 20px;
       background-color: white;
       color: #A51C30;
       border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
+      font-size: 1rem;
       transition: 0.3s;
     }
 
     #downloadBtn:hover {
       background-color: #f1f1f1;
+      transform: scale(1.02);
     }
 
     main {
@@ -105,12 +105,11 @@
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
       }
 
       #downloadBtn {
-        position: static;
-        margin-top: 1rem;
+        width: 100%;
       }
     }
   </style>
@@ -168,8 +167,9 @@
     </section>
 
     <section id="signatures">
-      <h2>Recommendations Signatures</h2>
+      <h2>Recommendations & Signatures</h2>
       <div class="signatures">
+        
         <div>
           <div class="signature-line"></div>
           <p>Dr. Elaf Ahmad<br>Assistant Dean of Personnel</p>
