@@ -1,199 +1,276 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sponsorship Proposal – AI Essentials for Business | Harvard Business School Online</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sponsorship Proposal – AI Essentials for Business | KFUPM</title>
+
+  <!-- html2pdf bundle (includes html2canvas & jspdf) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: 'Lato', 'Segoe UI', sans-serif;
-      background-color: #fff;
-      color: #222;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
+    :root{
+      --kfupm-green: #006C35;
+      --accent: #D9EAD3;
+      --text: #1f2933;
+      --muted:#666;
+      --max-width:900px;
     }
-    header {
-      background-color: #A51C30;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:#fff;
+      color:var(--text);
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.55;
     }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+
+    /* Header */
+    .topbar{
+      background:var(--kfupm-green);
+      color:#fff;
+      padding:28px 20px;
+      text-align:center;
     }
-    h1 {
-      color: #A51C30;
-      text-align: center;
-      margin-bottom: 40px;
+    .topbar h1{
+      margin:0;
+      font-size:22px;
+      font-weight:600;
+      letter-spacing:0.2px;
     }
-    h2 {
-      color: #A51C30;
-      border-bottom: 2px solid #A51C30;
-      padding-bottom: 5px;
-      margin-top: 40px;
+    .topbar p{margin:6px 0 0; font-size:14px; opacity:0.95}
+
+    /* Container */
+    .container{max-width:var(--max-width); margin:28px auto; padding:0 20px;}
+
+    h2{
+      color:var(--kfupm-green);
+      font-size:15px;
+      margin:26px 0 8px;
+      text-transform:uppercase;
+      letter-spacing:0.6px;
+      border-bottom:2px solid #eee;
+      padding-bottom:8px;
     }
-    p {
-      text-align: justify;
-      margin-bottom: 16px;
+    p{margin:12px 0; font-size:15px; color:var(--text); text-align:justify}
+    ul{margin:10px 0 18px 20px}
+    li{margin:8px 0}
+
+    /* Download button area */
+    .top-actions{display:flex; justify-content:center; margin-top:18px}
+    .btn {
+      background:var(--kfupm-green);
+      color:#fff;
+      padding:10px 18px;
+      border-radius:8px;
+      border:0;
+      cursor:pointer;
+      font-weight:600;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.06);
     }
-    ul {
-      margin-left: 20px;
+    .btn:hover{background:#0b7a3a}
+
+    /* Signatures */
+    .signatures{margin-top:36px}
+    .sig-line{margin:30px 0}
+    .sig-line .bar{
+      display:inline-block;
+      width:360px;
+      height:0;
+      border-top:2px solid #000;
+      margin-bottom:8px;
     }
-    .button-container {
-      text-align: center;
-      margin: 30px 0;
-    }
-    button {
-      background-color: #A51C30;
-      color: #fff;
-      border: none;
-      padding: 12px 25px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #8c1728;
-    }
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: #555;
-      margin-top: 60px;
-      padding-bottom: 40px;
-    }
-    .signature-section {
-      margin-top: 60px;
-    }
-    .signature-line {
-      margin: 40px 0;
-    }
-    .signature-line span {
-      display: block;
-      border-top: 1px solid #000;
-      width: 300px;
-      margin-bottom: 6px;
-    }
-    .signature-name {
-      font-weight: bold;
+    .sig-name{font-weight:600}
+    .sig-role{color:var(--muted); font-size:13px; margin-top:4px}
+
+    /* Footer */
+    footer{margin:40px 0 60px; text-align:center; color:var(--muted); font-size:13px}
+
+    /* Print friendly tweaks */
+    @media print{
+      .btn, .top-actions { display:none !important; }
+      body{background:#fff}
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Sponsorship Proposal for AI Essentials for Business Program</h1>
-    <p>Harvard Business School Online</p>
-  </header>
 
-  <main id="proposal-content">
-    <h2>Purpose</h2>
-    <p>In 2023, I completed my senior project in Business Analytics with the well-known delivery app Shgardi. My team and I developed several machine-learning models to predict customer churn and identify operational inefficiencies within the company. The project, titled “Shgardi: Business Analysis” (Qaissoom et al., 2023), revealed a high customer retention rate but also uncovered critical insights—most notably, that delivery captains were often assigned inefficiently, causing customers to wait much longer than expected. Many users also experienced poor delivery service due to long distances between restaurants and customers. We further identified that the company’s marketing strategy was outdated and not aligned with current market trends. Unfortunately, instead of addressing these operational and strategic challenges to improve profitability, the company sought to compensate for its declining revenue by investing in unrelated industries. A couple of weeks ago, Shgardi announced its bankruptcy (Zero to One, 2025).</p>
-
-    <p>The insights that machine learning once provided were remarkable, but the technology has since advanced at an exceptional pace. Today, we are witnessing the rise of Large Language Models (LLMs)—advanced forms of artificial intelligence capable of understanding and generating human-like content. This evolution represents a major leap forward, as AI has become one of the most transformative forces shaping modern organizations and industries. Satya Nadella, the CEO of Microsoft, emphasized AI’s transformative role by stating that “such AI solutions … will do our drudge work, freeing us to do the creative tasks where humans excel” (Nadella, 2023). Coming from the leader of a company whose technologies underpin nearly every organization in the world, this statement carries significant weight.</p>
-
-    <p>Many institutions have already begun adopting AI to streamline repetitive administrative work. For instance, the University of Melbourne implemented an automated process management system that handles data entry and administrative workflows in admissions and faculty operations, allowing staff to focus on more strategic and value-added activities (University of Melbourne, n.d.). Inspired by these examples, I am deeply motivated to learn how similar AI-driven transformation can be applied within our university—to leverage technology not only to improve efficiency, but also to empower staff and faculty to focus on innovation, creativity, and strategic growth.</p>
-
-    <h2>Commitment</h2>
-    <p>I am deeply committed to contributing to our university’s digital transformation and technological advancement. To take the first step toward this vision, I plan to enroll in the AI Essentials for Business program offered by Harvard Business School Online—a course designed to equip professionals with the strategic understanding needed to lead AI-driven innovation. I kindly seek the university’s support in this professional development journey through full or partial sponsorship. This opportunity will not only strengthen my ability to apply AI for institutional growth but also lay the foundation for my long-term goal of pursuing an MBA, enabling me to play a more impactful role in shaping the university’s future direction and leadership in innovation.</p>
-
-    <h2>Course Details</h2>
-    <ul>
-      <li><strong>Course Title:</strong> AI Essentials for Business</li>
-      <li><strong>Institution:</strong> Harvard Business School Online</li>
-      <li><strong>Program Overview:</strong> This course introduces how AI technologies can transform business operations and strategies. It provides practical frameworks for identifying AI use cases, assessing readiness, and implementing AI-driven models to improve efficiency and innovation.</li>
-      <li><strong>Program Cost:</strong> $1,850 USD (plus applicable international taxes)</li>
-      <li><strong>Duration:</strong> 4 weeks</li>
-      <li><strong>Effort:</strong> Approximately 5–7 hours per week</li>
-      <li><strong>Format:</strong> Online, cohort-based learning with structured weekly modules</li>
-      <li><strong>Certificate:</strong> Certificate of Completion from Harvard Business School Online</li>
-    </ul>
-
-    <h3>Core Learning Modules</h3>
-    <ol>
-      <li>Understanding the AI Factory Model</li>
-      <li>Transforming Business and Operating Models with AI</li>
-      <li>Building Organizational Readiness for AI Integration</li>
-      <li>Ethical and Governance Frameworks for Responsible AI</li>
-    </ol>
-
-    <h3>Expected Outcomes</h3>
-    <ul>
-      <li>Identify strategic opportunities for AI implementation</li>
-      <li>Evaluate organizational AI maturity and readiness</li>
-      <li>Align AI strategies with broader business goals</li>
-      <li>Understand ethical, cultural, and leadership considerations for sustainable AI adoption</li>
-    </ul>
-
-    <h2>References</h2>
-    <ul>
-      <li>Nadella, S. (2023, May 8). <i>Satya Nadella responds to concerns about AI.</i> TIME Magazine. <a href="https://time.com/6278179/satya-nadella-ai-concerns/" target="_blank">https://time.com/6278179/satya-nadella-ai-concerns/</a></li>
-      <li>Zero to One. (2025, October 27). <i>What happened to Shgardi?</i> Substack. <a href="https://www.newsletter.zto.sa/p/f6b" target="_blank">https://www.newsletter.zto.sa/p/f6b</a></li>
-      <li>University of Melbourne. (n.d.). <i>Case study: Tackling administrative processes with automation boosts performance.</i> Automation Anywhere. <a href="https://www.automationanywhere.com/resources/customer-stories/university-of-melbourne" target="_blank">https://www.automationanywhere.com/resources/customer-stories/university-of-melbourne</a></li>
-      <li>Harvard Business School Online. (n.d.). <i>AI Essentials for Business.</i> <a href="https://online.hbs.edu/courses/ai-essentials-for-business/" target="_blank">https://online.hbs.edu/courses/ai-essentials-for-business/</a></li>
-      <li>Qaissoom, A., Al-Bajhan, J., Al-Ali, I., & Al-Omran, M. (2023, May 30). <i>Shgardi: Business Analysis (MIS 442 Project).</i> King Fahd University of Petroleum and Minerals. <a href="https://kfupmedusa-my.sharepoint.com/:w:/g/personal/abdulhadi_qaissoom_kfupm_edu_sa/EXCo7lFnvL9CvPcVAQmPcVcBah724pZ-Dg2DgjS_eWu9RQ?e=JNg0RI" target="_blank">Project Link</a></li>
-    </ul>
-
-    <div class="signature-section">
-      <h2>Recommendation Signatures</h2>
-      <div class="signature-line">
-        <span></span>
-        <div class="signature-name">Dr. Elaf Ahmad</div>
-        <div>Assistant Dean of Personnel</div>
-      </div>
-      <div class="signature-line">
-        <span></span>
-        <div class="signature-name">Dr. Osman Siddiqui</div>
-        <div>Research Specialist III</div>
-      </div>
-      <div class="signature-line">
-        <span></span>
-        <div class="signature-name">Victoria Bedford</div>
-        <div>Assistant Director of HR Service Center</div>
-      </div>
-    </div>
-  </main>
-
-  <div class="button-container">
-    <button onclick="downloadPDF()">Download PDF</button>
+  <div class="topbar">
+    <h1>King Fahd University of Petroleum & Minerals</h1>
+    <p>Sponsorship Proposal — AI Essentials for Business (Harvard Business School Online)</p>
   </div>
 
+  <div class="top-actions">
+    <button id="downloadPdf" class="btn">Download PDF</button>
+  </div>
+
+  <main class="container" id="proposalContent">
+    <!-- Purpose -->
+    <section id="purpose">
+      <h2>Purpose</h2>
+      <p>
+        In 2023, I completed my senior project in Business Analytics with the well-known delivery app <strong>Shgardi</strong>.
+        My team and I developed several machine-learning models to predict customer churn and identify operational inefficiencies within the company.
+        The project, titled <em>“Shgardi: Business Analysis”</em> (Qaissoom et al., 2023), revealed a high customer retention rate but also uncovered critical insights—most notably,
+        that delivery captains were often assigned inefficiently, causing customers to wait much longer than expected.
+        Many users also experienced poor delivery service due to long distances between restaurants and customers.
+        We further identified that the company’s marketing strategy was outdated and not aligned with current market trends.
+        Unfortunately, instead of addressing these operational and strategic challenges to improve profitability,
+        the company sought to compensate for its declining revenue by investing in unrelated industries.
+        A few weeks ago, <strong>Shgardi announced its bankruptcy</strong> (Zero to One, 2025).
+      </p>
+
+      <p>
+        The insights that machine learning once provided were remarkable, but the technology has since advanced at an exceptional pace.
+        Today, we are witnessing the rise of <strong>Large Language Models (LLMs)</strong>—advanced forms of artificial intelligence capable of understanding and generating human-like content.
+        This evolution represents a major leap forward, as <strong>AI</strong> has become one of the most transformative forces shaping modern organizations and industries.
+        Satya Nadella, the CEO of Microsoft, emphasized AI’s role by stating that “such AI solutions … will do our drudge work, freeing us to do the creative tasks where humans excel” (Nadella, 2023).
+      </p>
+
+      <p>
+        Many institutions have already begun adopting AI to streamline repetitive administrative work.
+        For instance, the University of Melbourne implemented an automated process management system that handles data entry and administrative workflows in admissions and faculty operations,
+        allowing staff to focus on more strategic and value-added activities (University of Melbourne, n.d.).
+        Inspired by these examples, I am motivated to explore how similar AI-driven transformation can be applied within our university—to leverage technology not only to improve efficiency,
+        but also to empower staff and faculty to focus on innovation and strategic growth.
+      </p>
+    </section>
+
+    <!-- Commitment -->
+    <section id="commitment">
+      <h2>Commitment</h2>
+      <p>
+        I am committed to contributing to our university’s digital transformation and technological advancement.
+        To take the first step toward this vision, I plan to enroll in the <strong>AI Essentials for Business</strong> program offered by <strong>Harvard Business School Online</strong> —
+        a course designed to equip professionals with the strategic understanding needed to lead AI-driven innovation.
+      </p>
+      <p>
+        I respectfully request the university's support through full or partial sponsorship for this program.
+        This development will strengthen my ability to apply AI for institutional growth and lay the foundation for my long-term goal of pursuing an <strong>MBA</strong>,
+        enabling me to contribute more effectively to the university’s leadership in innovation.
+      </p>
+    </section>
+
+    <!-- Course Details -->
+    <section id="course">
+      <h2>Course Details</h2>
+      <ul>
+        <li><strong>Course Title:</strong> AI Essentials for Business</li>
+        <li><strong>Institution:</strong> Harvard Business School Online</li>
+        <li><strong>Program Cost:</strong> $1,850 USD (plus applicable international taxes)</li>
+        <li><strong>Duration:</strong> 4 weeks</li>
+        <li><strong>Effort:</strong> Approximately 5–7 hours per week</li>
+        <li><strong>Format:</strong> Online, cohort-based learning with structured weekly modules</li>
+        <li><strong>Certificate:</strong> Certificate of Completion from Harvard Business School Online</li>
+      </ul>
+
+      <p><strong>Core Learning Modules:</strong></p>
+      <ol>
+        <li>Understanding the AI Factory Model</li>
+        <li>Transforming Business and Operating Models with AI</li>
+        <li>Building Organizational Readiness for AI Integration</li>
+        <li>Ethical and Governance Frameworks for Responsible AI</li>
+      </ol>
+
+      <p><strong>Expected Outcomes:</strong></p>
+      <ul>
+        <li>Identify strategic opportunities for AI implementation</li>
+        <li>Evaluate organizational AI maturity and readiness</li>
+        <li>Align AI strategies with broader business goals</li>
+        <li>Understand ethical, cultural, and leadership considerations for sustainable AI adoption</li>
+      </ul>
+    </section>
+
+    <!-- Signatures -->
+    <section id="signatures" class="signatures">
+      <h2>Recommendation & Signatures</h2>
+      <p>It is recommended to approve <strong>full or partial sponsorship</strong> for this professional development program, given its alignment with the university’s strategic goals for digital transformation and innovation.</p>
+
+      <div class="sig-line">
+        <div class="bar"></div>
+        <div class="sig-name">Dr. Elaf Ahmad</div>
+        <div class="sig-role">Assistant Dean of Personnel</div>
+      </div>
+
+      <div class="sig-line">
+        <div class="bar"></div>
+        <div class="sig-name">Dr. Osman Siddiqui</div>
+        <div class="sig-role">Research Specialist III</div>
+      </div>
+
+      <div class="sig-line">
+        <div class="bar"></div>
+        <div class="sig-name">Victoria Bedford</div>
+        <div class="sig-role">Assistant Director of HR Service Center</div>
+      </div>
+    </section>
+
+    <!-- References last -->
+    <section id="references">
+      <h2>References</h2>
+      <ul>
+        <li>Nadella, S. (2023, May 8). <em>Satya Nadella responds to concerns about AI.</em> TIME Magazine. <a href="https://time.com/6278179/satya-nadella-ai-concerns/" target="_blank" rel="noopener">https://time.com/6278179/satya-nadella-ai-concerns/</a></li>
+        <li>Zero to One. (2025, October 27). <em>What happened to Shgardi?</em> Substack. <a href="https://www.newsletter.zto.sa/p/f6b" target="_blank" rel="noopener">https://www.newsletter.zto.sa/p/f6b</a></li>
+        <li>University of Melbourne. (n.d.). <em>Case study: Tackling administrative processes with automation boosts performance.</em> Automation Anywhere. <a href="https://www.automationanywhere.com/resources/customer-stories/university-of-melbourne" target="_blank" rel="noopener">https://www.automationanywhere.com/resources/customer-stories/university-of-melbourne</a></li>
+        <li>Harvard Business School Online. (n.d.). <em>AI Essentials for Business.</em> <a href="https://online.hbs.edu/courses/ai-essentials-for-business/" target="_blank" rel="noopener">https://online.hbs.edu/courses/ai-essentials-for-business/</a></li>
+        <li>Qaissoom, A., Al-Bajhan, J., Al-Ali, I., & Al-Omran, M. (2023, May 30). <em>Shgardi: Business Analysis (MIS 442 Project).</em> King Fahd University of Petroleum and Minerals. <a href="https://kfupmedusa-my.sharepoint.com/:w:/g/personal/abdulhadi_qaissoom_kfupm_edu_sa/EXCo7lFnvL9CvPcVAQmPcVcBah724pZ-Dg2DgjS_eWu9RQ?e=JNg0RI" target="_blank" rel="noopener">Project Link</a></li>
+      </ul>
+    </section>
+  </main>
+
   <footer>
-    <p>© 2025 | Sponsorship Proposal – AI Essentials for Business | Harvard Business School Online</p>
+    <div id="footerText">© 2025 Abdulhadi Qaissoom | Sponsorship Proposal</div>
   </footer>
 
-  <script>
-    function downloadPDF() {
-      const element = document.getElementById('proposal-content');
-      const opt = {
-        margin: 0.5,
-        filename: 'AI_Essentials_Proposal.pdf',
-        image: { type: 'jpeg', quality: 1 },
-        html2canvas: { scale: 2, backgroundColor: '#ffffff' },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-      };
-      const worker = html2pdf().set(opt).from(element);
-      worker.toPdf().get('pdf').then(function (pdf) {
-        const totalPages = pdf.internal.getNumberOfPages();
-        const today = new Date();
-        const formattedDate = today.toLocaleString('en-US', {
-          month: 'long', day: 'numeric', year: 'numeric',
-          hour: '2-digit', minute: '2-digit', hour12: true
-        });
-        for (let i = 1; i <= totalPages; i++) {
-          pdf.setPage(i);
-          pdf.setFontSize(10);
-          pdf.setTextColor(150);
-          pdf.text('Harvard Business School Online – Sponsorship Proposal', 0.5, 0.5);
-          pdf.text(`Generated on ${formattedDate} | Page ${i} of ${totalPages}`, 0.5, 10.8);
-        }
-      }).save();
+<script>
+/*
+  PDF Export:
+  - High-quality rendering using html2pdf (html2canvas scale increased)
+  - Adds header and footer text (header fixed, footer includes generation date and page numbers)
+*/
+
+document.getElementById('downloadPdf').addEventListener('click', function(){
+  const element = document.getElementById('proposalContent');
+
+  // configure options
+  const opt = {
+    margin:       [0.5,0.5,0.9,0.5], // top, left, bottom, right (inches)
+    filename:     'AI_Essentials_Proposal.pdf',
+    image:        { type: 'jpeg', quality: 1 },
+    html2canvas:  { scale: 3, useCORS: true, scrollY: -window.scrollY },
+    jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+  };
+
+  // create the pdf
+  html2pdf().set(opt).from(element).toPdf().get('pdf').then(function (pdf) {
+    const totalPages = pdf.internal.getNumberOfPages();
+    // format generation date
+    const now = new Date();
+    const formattedDate = now.toLocaleString('en-US', {
+      month: 'long', day: 'numeric', year: 'numeric',
+      hour:'2-digit', minute:'2-digit', hour12: true
+    });
+
+    const headerText = 'KFUPM – Sponsorship Proposal';
+    // add header/footer to each page
+    pdf.setFontSize(10);
+    pdf.setTextColor(100); // slightly muted for header
+    for (let i = 1; i <= totalPages; i++) {
+      pdf.setPage(i);
+      // Header: place near top (0.5 inches from top)
+      pdf.text(headerText, 0.5, 0.45);
+      // Footer: generation date and page number at bottom
+      pdf.setTextColor(120);
+      pdf.text(`Generated on ${formattedDate} | Page ${i} of ${totalPages}`, 0.5, pdf.internal.pageSize.getHeight() - 0.3);
     }
-  </script>
+  }).save();
+});
+</script>
+
 </body>
 </html>
